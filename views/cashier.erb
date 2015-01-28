@@ -1,0 +1,16 @@
+<h1> Add products to purchase: </h1>
+
+<% if @products.any?() %>
+<form action="/cashier/<%= @cashier.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <% @products.each() do |product| %>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="product_ids[]" value="<%= product.id() %>"><%= product.name() %>...<% product.price() %>
+    </label>
+  </div>
+  <% end %>
+
+  <button type="submit">Add products</button>
+</form>
+<% end %>

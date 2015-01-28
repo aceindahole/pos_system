@@ -1,0 +1,25 @@
+<h1><u>Manager Functions</u></h1>
+<br>
+<br>
+<p> Add a product: </p>
+
+<form action="/manager" method="post">
+  <label for="description">Product Description</label>
+  <input id="description" name="description" type="text">
+
+  <label for="price">Product Price</label>
+  <input id="price" name="price" type="text">
+
+  <button type="submit">Add product</button>
+</form>
+<br>
+<br>
+<h2> Added products: </h2>
+<br>
+<ul>
+  <% @products.each do |product| %>
+  <li><a href="/manager/<%= product.id %>"><%= product.description %>......$<%= product.price %></a></li>
+  <% end %>
+</ul>
+
+<br><br><a href="/"><p>Go Home</a></p>

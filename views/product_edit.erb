@@ -1,0 +1,13 @@
+<h1>Update <%=@product.description() %> </h1>
+
+<form action="/manager/<%= @product.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <label for="description">Redescribe the product:</label>
+  <input id="description" name="description" type="text">
+
+  <input name="_method" type="hidden" value="patch">
+  <label for="price">Reprice the product:</label>
+  <input id="price" name="price" type="number">
+
+  <button type="submit">Update</button>
+</form>
